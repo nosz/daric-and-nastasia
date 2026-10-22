@@ -2,7 +2,7 @@
 const VERSION = "1.0.0";
 const CACHE = "daric-nastasia-quiz-" + VERSION;
 const CORE = ["./", "index.html", "manifest.webmanifest"];
-const OPTIONAL = ["favicon.png", "apple-touch-icon.png", "icon-192.png", "icon-512.png", "icon-maskable-512.png", "daric_nastasia_vorschau.jpg"];
+const OPTIONAL = ["favicon.png", "apple-touch-icon.png", "icon-192.png", "icon-512.png", "icon-maskable-512.png", "daric_nastasia_vorschau.jpg", "flags/de.svg", "flags/fr.svg", "flags/ch.svg", "flags/it.svg"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE).then(() => Promise.allSettled(OPTIONAL.map(u => c.add(u)))))); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(k => Promise.all(k.filter(n => n.startsWith("daric-nastasia-quiz-") && n !== CACHE).map(n => caches.delete(n)))).then(() => self.clients.claim())); });
 self.addEventListener("message", e => { if(e.data === "SKIP_WAITING") self.skipWaiting(); });

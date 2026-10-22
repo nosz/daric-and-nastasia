@@ -1,7 +1,7 @@
 {
-  "name": "Daric & Nastasia: Tanzen lernen",
+  "name": "Daric & Nastasia : apprendre à danser",
   "short_name": "Daric & Nastasia",
-  "description": "Quiz zu Discofox und West Coast Swing mit Daric & Nastasia, Urkunden und Humor (Deutsch). Quiz sur le discofox et le West Coast Swing avec Daric & Nastasia, diplômes et humour (français). Läuft auch offline.",
+  "description": "Quiz sur le discofox et le West Coast Swing avec Daric & Nastasia : 8 leçons, diplômes et humour. En français, allemand, suisse allemand et italien. Fonctionne aussi hors ligne.",
   "id": "/daric-and-nastasia/",
   "start_url": "./",
   "scope": "./",
@@ -10,7 +10,7 @@
   "orientation": "any",
   "background_color": "#f8f3e8",
   "theme_color": "#1d2f6f",
-  "lang": "de",
+  "lang": "fr",
   "dir": "ltr",
   "categories": ["education", "entertainment"],
   "prefer_related_applications": false,
@@ -22,16 +22,16 @@
   "shortcuts": [
     {
       "url": "./#lesson-boss",
-      "description": "Direkt in die Bossrunde / Directement au tour final",
-      "name": "Bossrunde",
-      "short_name": "Boss",
+      "description": "Directement au défi final (tour boss)",
+      "name": "Défi final",
+      "short_name": "Défi",
       "icons": [{ "type": "image/png", "sizes": "192x192", "src": "icon-192.png" }]
     },
     {
       "url": "./#home",
-      "description": "Zur Übersicht mit deinen Urkunden / Aperçu avec tes diplômes",
-      "name": "Übersicht",
-      "short_name": "Home",
+      "description": "Aperçu avec tes diplômes",
+      "name": "Mes diplômes",
+      "short_name": "Accueil",
       "icons": [{ "type": "image/png", "sizes": "192x192", "src": "icon-192.png" }]
     }
   ]
