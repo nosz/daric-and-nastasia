@@ -30,7 +30,7 @@ Un clic lance l'application directement dans la langue voulue (adresse avec `?la
 - Les textes français, allemands, suisses allemands et italiens sont écrits avec affection ; les locuteurs natifs sont les bienvenus pour corriger.
 - Plus d'informations sur le couple et leurs cours : [Tanzschule Joy](https://tanzschule-joy.ch/de/nastia+&+daric).
 
-**Created by [Norbert](https://nosz.github.io/norbert-szpak.de)** · Version 1.0.0 (22.10.2026)
+**[Created by Norbert](https://nosz.github.io/norbert-szpak/)** · Version 1.0.0 (22.10.2026)
 
 ---
 
@@ -54,4 +54,4 @@ Kostenlos, ohne Anmeldung, läuft im Browser auf Handy, Tablet und Computer. Dei
 - Die französischen, deutschen, schweizerdeutschen und italienischen Texte sowie das gebrochene Deutsch von Daric und Nastasia sind liebevoll gemeint; Muttersprachler dürfen gern korrigieren.
 - Mehr über das Paar und ihre Kurse: [Tanzschule Joy](https://tanzschule-joy.ch/de/nastia+&+daric).
 
-**Created by [Norbert](https://nosz.github.io/norbert-szpak.de)** · Version 1.0.0 (22.10.2026)
+**[Created by Norbert](https://nosz.github.io/norbert-szpak/)** · Version 1.0.0 (22.10.2026)
