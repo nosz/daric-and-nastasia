@@ -414,7 +414,7 @@ h2.secrow .cnt{font-size:.9rem;color:var(--mute);font-weight:700}
 <div id="live" class="sr" aria-live="polite"></div>
 <script>
 "use strict";
-const VERSION = "1.0.0", STAND = "22.10.2026";
+const VERSION = "1.0.0", STAND = "23.10.2026";
 const LANGS = [["de","DE","Deutsch","de"],["fr","FR","Français","fr"],["ch","CH","Schweizerdeutsch","gsw"],["it","IT","Italiano","it"]];
 const KEY = "daric_nastasia_quiz_v1";
 const HOME_URL = "https://nosz.github.io/daric-and-nastasia/";
@@ -1717,7 +1717,7 @@ function chrome(){
       h("ul", {class:"srclist"}, sl.src.map(s => h("li", null, h("a", {href:s[1], rel:"noopener"}, s[0]))))) : null,
     view.v !== "home" ? h("div", {class:"fhome"}, h("button", {type:"button", class:"btn ghost", onclick:() => go("home")}, (() => { const s = h("span", {"aria-hidden":"true"}); s.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-6h4v6"/></svg>'; return s; })(), h("span", {text:t("toHome")}))) : null,
     view.v === "home" ? h("div", {class:"fcard"}, h("span", {class:"fic", "aria-hidden":"true"}, "ℹ️"), h("div", null, h("p", {class:"fdisc", text:t("disc")}), h("p", {class:"ftrans", text:t("trans")}))) : null,
-    view.v === "home" ? h("p", {class:"fver"}, h("span", null, t("ver") + " " + VERSION + " · ", h("a", {href:"https://nosz.github.io/norbert-szpak/", rel:"noopener"}, "Created by Norbert"))) : null].filter(Boolean));   // Info und Version nur auf der ersten Seite
+    view.v === "home" ? h("p", {class:"fver"}, h("span", null, t("ver") + " " + VERSION + " · ", h("a", {href:"https://nosz.github.io/norbert-szpak/", rel:"noopener"}, "Website Design by Norbert"))) : null].filter(Boolean));   // Info und Version nur auf der ersten Seite
 }
 $("#brand").onclick = () => {
   if(view.v === "home"){ const rm = matchMedia("(prefers-reduced-motion: reduce)").matches; window.scrollTo({top:0, behavior: rm ? "auto" : "smooth"}); $("#main").focus({preventScroll:true}); }
