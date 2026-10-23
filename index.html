@@ -396,6 +396,18 @@ h2.secrow .cnt{font-size:.9rem;color:var(--mute);font-weight:700}
 .tcgrid .tce2{font-weight:800;font-size:.9rem;color:#fff}
 .tcgrid .tcs{font-size:.84rem;color:#dfe5fb}
 @media print{.titelcard{display:none}}
+
+/* Autoren-Hinweis: auffaelliger Knopf, ganzer Text ist der Link (PFLICHT) */
+.fcredit{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:6px}
+.fcredit .fver{margin:14px 0 0}
+a.credit{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:12px 28px;border-radius:999px;border:2px solid #fff;background:linear-gradient(135deg,#1d2f6f 0%,#2c4290 55%,#c8203a 100%);color:#fff;font-weight:800;font-size:1.08rem;letter-spacing:.2px;text-decoration:none;box-shadow:0 0 0 3px #e2b93b,0 8px 22px rgba(29,47,111,.4);transition:transform .15s,filter .15s}
+a.credit{white-space:nowrap;max-width:100%}
+@media(max-width:420px){a.credit{font-size:1rem;padding:12px 18px;gap:8px}}
+a.credit .cr-st{color:#e2b93b;font-size:1.2rem;line-height:1}
+a.credit .cr-ar{font-size:1.15rem;line-height:1}
+a.credit:hover{filter:brightness(1.12);transform:translateY(-2px)}
+a.credit:focus-visible{outline:3px solid #fff;outline-offset:4px;box-shadow:0 0 0 6px #1d2f6f}
+@media print{.fcredit{display:none}}
 </style>
 </head>
 <body>
@@ -414,7 +426,7 @@ h2.secrow .cnt{font-size:.9rem;color:var(--mute);font-weight:700}
 <div id="live" class="sr" aria-live="polite"></div>
 <script>
 "use strict";
-const VERSION = "1.0.0", STAND = "23.10.2026";
+const VERSION = "1.0.1", STAND = "23.10.2026";
 const LANGS = [["de","DE","Deutsch","de"],["fr","FR","Français","fr"],["ch","CH","Schweizerdeutsch","gsw"],["it","IT","Italiano","it"]];
 const KEY = "daric_nastasia_quiz_v1";
 const HOME_URL = "https://nosz.github.io/daric-and-nastasia/";
@@ -562,7 +574,9 @@ const S = {
  dSub:["Du kannst sie ansehen, speichern oder drucken. Mit „Nochmal spielen“ holst du dir mehr Sterne.","Tu peux le regarder, l'enregistrer ou l'imprimer. Avec « Rejouer », tu gagnes plus d'étoiles.","Du chasch sie aaluege, speichere oder drucke. Mit „Nomal spile“ holsch der meh Stärn.","Puoi guardarlo, salvarlo o stamparlo. Con «Rigioca» ottieni più stelle."],
  certView:["Urkunde ansehen","Voir le diplôme","Urkunde aaluege","Vedi il diploma"],
  certAll:["Alle Urkunden","Tous les diplômes","Alli Urkunde","Tutti i diplomi"],
- joySec:["Links zu Daric & Nastasia","Liens vers Daric & Nastasia","Links zu Daric & Nastasia","Link a Daric & Nastasia"],
+ joySec:["Links","Liens","Links","Link"],
+ dcApp:["DANCECHANCE: das Quiz mit Manfred & Nela","DANCECHANCE : le quiz avec Manfred & Nela","DANCECHANCE: s Quiz mit em Manfred & de Nela","DANCECHANCE: il quiz con Manfred & Nela"],
+ dcAppNote:["Die Gäste aus dem Bild: nosz.github.io/dancechance","Les invités de l'écran : nosz.github.io/dancechance","D Gäscht us em Bild: nosz.github.io/dancechance","Gli ospiti sullo schermo: nosz.github.io/dancechance"],
  offSite:["Daric & Nastasia – Offizielle Website","Daric & Nastasia – Site officiel","Daric & Nastasia – Offizielli Websiite","Daric & Nastasia – Sito ufficiale"],
  offNote:["Titel, Kurse und Workshops · daricnastia.ch","Titres, cours et ateliers · daricnastia.ch","Titel, Kurs und Workshops · daricnastia.ch","Titoli, corsi e workshop · daricnastia.ch"],
  tcEye:["Offizieller Titel","Titre officiel","Offizielle Titel","Titolo ufficiale"],
@@ -1195,10 +1209,10 @@ h("div", {class:"stats", role:"list"},
   m.append(h("p", {style:"margin-top:26px;text-align:center"}, h("button", {type:"button", class:"btn ghost", onclick:() => { if(confirm(t("resetQ"))){ prog = {}; save(); render(); } }}, "↺ " + t("reset"))));
 }
 /* Links zu Daric & Nastasia (offizielle Website zuerst) und Titel-Block der Startseite (Quelle: https://daricnastia.ch/, 22.10.2026) */
-const JOY = "https://tanzschule-joy.ch/de/nastia+&+daric", OFFSITE = "https://daricnastia.ch/";
+const JOY = "https://tanzschule-joy.ch/de/nastia+&+daric", OFFSITE = "https://daricnastia.ch/", DCAPP = "https://nosz.github.io/dancechance/";
 function joyLinks(){
   const w = h("section", {"aria-labelledby":"jh"}), g = h("div", {class:"certlist nlinks"});
-  [[OFFSITE, t("offSite"), t("offNote")], [JOY, t("joyLink"), t("joyNote") + " · tanzschule-joy.ch"]].forEach(x => g.append(h("a", {class:"btn ghost", href:x[0], rel:"noopener"}, lico("heart"), h("span", null, x[1], h("small", {style:"display:block;font-weight:600;color:var(--mute)", text:x[2]})))));
+  [[OFFSITE, t("offSite"), t("offNote")], [JOY, t("joyLink"), t("joyNote") + " · tanzschule-joy.ch"], [DCAPP, t("dcApp"), t("dcAppNote")]].forEach(x => g.append(h("a", {class:"btn ghost", href:x[0], rel:"noopener"}, lico("heart"), h("span", null, x[1], h("small", {style:"display:block;font-weight:600;color:var(--mute)", text:x[2]})))));
   w.append(h("h2", {class:"sec", id:"jh", text:"💃 " + t("joySec")}), g); return w;
 }
 function titelCard(){
@@ -1440,7 +1454,7 @@ const ICO = {
   film:'<svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 4v16M16 4v16M3 12h18M3 8h5M3 16h5M16 8h5M16 16h5"/></svg>'
 };
 function lico(k){ const s = h("span", {class:"lico", "aria-hidden":"true"}); if(ICO[k]) s.innerHTML = ICO[k]; else s.textContent = k; return s; }
-/* Sprachwahl wie in HERZINTELLIGENZ: Knopf mit Flagge und Kurzname, darunter ein Fenster mit Suchfeld; Suche auch nach Namen in anderen Sprachen */
+/* Sprachwahl wie in der App Herzintelligenz: Knopf mit Flagge und Kurzname, darunter ein Fenster mit Suchfeld; Suche auch nach Namen in anderen Sprachen */
 function flagEl(code){ const s = document.createElement("span"), i = document.createElement("img"); s.className = "flag"; s.setAttribute("aria-hidden", "true"); i.src = "flags/" + code + ".svg"; i.alt = ""; i.width = 28; i.height = 21; i.decoding = "async"; i.draggable = false; s.append(i); return s; }
 const LANG_GROUPS = [["langG1", ["fr", "de", "ch", "it"]]];
 const LANG_ALT = {de:"german allemand tedesco", fr:"french francais francese", ch:"swiss suisse svizzera schweiz schwyzerdutsch schwiizerdutsch mundart gsw", it:"italian italien italienisch italia"};
@@ -1717,7 +1731,7 @@ function chrome(){
       h("ul", {class:"srclist"}, sl.src.map(s => h("li", null, h("a", {href:s[1], rel:"noopener"}, s[0]))))) : null,
     view.v !== "home" ? h("div", {class:"fhome"}, h("button", {type:"button", class:"btn ghost", onclick:() => go("home")}, (() => { const s = h("span", {"aria-hidden":"true"}); s.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v10h13V10"/><path d="M10 20v-6h4v6"/></svg>'; return s; })(), h("span", {text:t("toHome")}))) : null,
     view.v === "home" ? h("div", {class:"fcard"}, h("span", {class:"fic", "aria-hidden":"true"}, "ℹ️"), h("div", null, h("p", {class:"fdisc", text:t("disc")}), h("p", {class:"ftrans", text:t("trans")}))) : null,
-    view.v === "home" ? h("p", {class:"fver"}, h("span", null, t("ver") + " " + VERSION + " · ", h("a", {href:"https://nosz.github.io/norbert-szpak/", rel:"noopener"}, "Website Design by Norbert"))) : null].filter(Boolean));   // Info und Version nur auf der ersten Seite
+    view.v === "home" ? h("div", {class:"fcredit"}, h("p", {class:"fver"}, h("span", {text:t("ver") + " " + VERSION})), h("a", {class:"credit", href:"https://nosz.github.io/norbert-szpak/", target:"_blank", rel:"noopener noreferrer"}, h("span", {class:"cr-st", "aria-hidden":"true"}, "✦"), h("span", {text:"Website Design by Norbert"}), h("span", {class:"cr-ar", "aria-hidden":"true"}, "↗"))) : null].filter(Boolean));   // Info und Version nur auf der ersten Seite
 }
 $("#brand").onclick = () => {
   if(view.v === "home"){ const rm = matchMedia("(prefers-reduced-motion: reduce)").matches; window.scrollTo({top:0, behavior: rm ? "auto" : "smooth"}); $("#main").focus({preventScroll:true}); }
